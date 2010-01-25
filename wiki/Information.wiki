@@ -1,4 +1,5 @@
 #summary Information and usage for this library
+#labels Featured
 
 An implementation of SRP-6a - Secure Remote Password Protocol. See http://srp.stanford.edu and http://srp.stanford.edu/ndss.html. The improvements described in SRP-6: Improvements and Refinements to the Secure Remote Password Protocol have been incorporated.
 

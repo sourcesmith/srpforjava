@@ -27,7 +27,7 @@ This value should be stored away referenced via a username.
 The second activity is a client/server session. On the server, allocate a SRPServerSessionRunner loaded with a session from newServerSession(SRPVerifier). On the client, allocate a SRPClientSessionRunner loaded with a session from newClientSession(byte[]). Once you have a Session Runner, you can pass it to an SRPInputStream and an SRPOutputStream. For each of these streams, call both SRPInputStream.authenticate(SRPRunner, SRPOutputStream) and SRPOutputStream.authenticate(SRPRunner, SRPInputStream). Once authenticated, use them as you would any I/O stream. All I/O on these streams are encrypted using AES with the SRP session key as the encryption key.
 
 Stream Protocol 
-The SRPInputStream/SRPOutStream authenticate using, essentially, the protocol as specified here: http://srp.stanford.edu/design.html. All values are sent as BigInteger.toString(int) with a radix of 16. The only difference is that the method to combine values is unique to this library (see SRPUtils.combine(BigInteger, BigInteger)). If at any point authentication fails, the stream is closed.
+The SRPInputStream/SRPOutStream authenticate using, essentially, the protocol as specified here: http://srp.stanford.edu/design.html. All values are sent as !BigInteger.toString(int) with a radix of 16. The only difference is that the method to combine values is unique to this library (see SRPUtils.combine(!BigInteger, !BigInteger)). If at any point authentication fails, the stream is closed.
 Once authentication is complete, the streams use the following protocol to send data: 
 {{{
 	[data size][newline]

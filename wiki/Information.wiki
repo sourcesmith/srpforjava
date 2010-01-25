@@ -33,6 +33,6 @@ Once authentication is complete, the streams use the following protocol to send 
 	[data size][newline]
 	[data]
 }}}
-"data size" is the number of bytes in the data block. The size is specified as radix 16 BigInteger. The data block is encrypted via AES using K as the key. K is an MD5 hash of S. A new data block is sent each time flush() is called on the output stream.
+"data size" is the number of bytes in the data block. The size is specified as radix 16 !BigInteger. The data block is encrypted via AES using K as the key. K is an MD5 hash of S. A new data block is sent each time flush() is called on the output stream.
 
 IMPORTANT: This library relies on JCE
